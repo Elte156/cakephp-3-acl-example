@@ -139,7 +139,7 @@ $this->loadComponent('Auth', [
 ```
  
 ### Add Temporary Auth Overrides
-Temporarily allow access to `UsersController` and `GroupsController` so groups and users can be added. Add the following implementation of `beforeFilter` to `src/Controllers/UsersController.php` and `src/Controllers/GroupsController.php`:
+Temporarily allow access to `UsersController` and `GroupsController` so groups and users can be added. Add the following implementation of `initialize` to `src/Controllers/UsersController.php` and `src/Controllers/GroupsController.php`:
 ```php
 public function initialize()
 {
@@ -207,7 +207,7 @@ The [ACL Extras](https://github.com/markstory/acl_extras/) plugin referred to in
     - `test-user` is a `User`
 	
 ### Remove Temporary Auth Overrides
-Remove the temporary auth overrides by removing the `beforeFilter` function or the call to `$this->Auth->allow();` in `src/Controllers/UsersController.php` and `src/Controllers/GroupsController.php`.
+Remove the temporary auth overrides by removing the `initialize` function or the call to `$this->Auth->allow();` in `src/Controllers/UsersController.php` and `src/Controllers/GroupsController.php`.
 	
 ### Configuring Permissions
 #### Configuring permissions using the ACL shell
